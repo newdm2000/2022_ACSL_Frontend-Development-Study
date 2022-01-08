@@ -1,6 +1,6 @@
 <html>
   <head>
-    <tytle>그랩마켓</tytle>
+    <title>그랩마켓</title>
     <link href="index.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
@@ -15,27 +15,49 @@
       </div>
       <h1>판매되는 상품들</h1>
       <div id="product-list">
-        <div class="product-card">
-          <div>
-            <img
-              class="product-img"
-              src="images/images/products/basketball1.jpeg"
-            />
-          </div>
-          <div class="product-contents">
-            <span class="product-name">농구공 1호</span>
-            <span class="product-price">50000원</span>
-            <div class="product-seller">
-              <img
-                class="product-avater"
-                src="images/images/icons/avatar.png"
-              />
-              <span>그랩</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <div id="footer"></div>
   </body>
+  <script>
+    var productㄴ = [{
+      name : '농구공',
+      price : 100000,
+      seller : '조던',
+      imageUrl : '/images/products/basketball1.png'
+    }, {
+      name : '축구공',
+      price : 50000,
+      seller : '메시',
+      imageUrl : '/images/products/soccerball1.png'
+    }, {
+      name : '키보드',
+      price : 10000,
+      seller : '그랩',
+      imageUrl : '/images/products/keyboard1.png'
+    }]
+    let productsHtml = "";
+    for(var i =0; i < product.length; i++){
+      productsHtml = productsHtml + '<div class="product-card">'+
+        '<div>'+
+          '<img'+
+            'class="product-img"'+
+            'src="images/images/products/basketball1.jpeg"'+
+          '/>'+
+        '</div>'+
+        '<div class="product-contents">'+
+          '<span class="product-name">농구공 1호</span>'+
+          '<span class="product-price">50000원</span>'+
+          '<div class="product-seller">'+
+            '<img'+
+              'class="product-avater"'+
+              'src="images/images/icons/avatar.png"'+
+            '/>'+
+            '<span>그랩</span>'+
+          '</div>'+
+        '</div>'+
+      '</div>';
+    }
+    document.querySelector("#product-list").innerHTML = productsHtml;
+  </script>
 </html>
